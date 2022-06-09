@@ -1,0 +1,197 @@
+@import '../../styles/variables';
+
+.header {
+    background-image: url('../../../public/assets/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0,0,0,.2);
+        z-index: 2;
+    }
+    .inner {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        z-index: 3;
+        .item {
+            .title {
+                font-size: 48px;
+                font-weight: 700;
+                color: $white;
+                max-width: 700px;
+                line-height: 64px;
+                text-transform: uppercase;
+                margin-top: 247px;
+            }
+
+            .descr {
+                color: $white;
+                margin-top: 15px;
+                margin-bottom: 86px;
+            }
+
+            &:last-child {
+                background: $blue;
+
+                .lang {
+                    display: flex;
+                    justify-content: center;
+                    margin: 40px 0 88px;
+
+                    .btnActive {
+                        font-size: 28px;
+                        font-weight: 700;
+                        color: $yellow;
+                        border: none;
+                        background: transparent;
+                        border: 2px solid $yellow;
+                        border-radius: 6px;
+                        padding: 6px;
+                        cursor: pointer;
+                    }
+
+                    .btn {
+                        font-size: 28px;
+                        font-weight: 700;
+                        color: $white;
+                        background: transparent;
+                        border: none;
+                        margin-left: 10px;
+                        cursor: pointer;
+                        transition: all .2s ease;
+                        &:hover {
+                            color: $yellow;
+                        }
+                    }
+                }
+
+                .number {
+                    color: $yellow;
+                    font-size: 80px;
+                    font-weight: 700;
+                    border: 5px solid $yellow;
+                    border-radius: 20px;
+                    padding: 14px 25px 14px 80px;
+                    margin: 0 27px;
+                    display: inline-block;
+                    position: relative;
+                    transition: all .3s ease;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        width: 36px;
+                        height: 59px;
+                        background-image: url('../../../public/assets/numberIcon.svg');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        left: 30px;
+                        top: 30px;
+                        transition: all .3s ease;
+                    }
+
+                    &:hover {
+                        color: $white;
+                        border: 5px solid $white;
+
+                        &::before {
+                            background-image: url('../../../public/assets/numberIconHover.svg');
+                        }
+                    }
+                }
+
+                .call {
+                    font-size: 28px;
+                    color: $white;
+                    font-weight: 700;
+                    text-align: center;
+                    margin-top: 15px;
+                    text-transform: uppercase;
+                }
+
+                .whatsapp {
+                    color: $white;
+                    font-size: 36px;
+                    font-weight: 500;
+                    padding-left: 50px;
+                    margin: 0 27px;
+                    display: inline-block;
+                    position: relative;
+                    margin-top: 22px;
+                    cursor: pointer;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        background-image: url('../../../public/assets/whatsappIcon.svg');
+                        top: 0;
+                        left: 0;
+                        width: 35px;
+                        height: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .header {
+        background-image: url('../../../public/assets/backgroundMobile.png');
+        background-size: contain;
+        .inner {
+            flex-wrap: wrap;
+            .item {
+                .title {
+                    margin-top: 190px;
+                    font-size: 24px;
+                    line-height: 36px;
+                    max-width: 248px;
+                }
+                .descr {
+                    margin-top: 10px;
+                    font-size: 18px;
+                    max-width: 238px;
+                }
+                &:first-child {
+                    margin-left: 30px;
+                }
+                &:last-child {
+                    width: 100%;
+                    padding: 30px 0;
+                    margin-bottom: 30px;
+                    .lang {
+                        position: absolute;
+                        top: -40px;
+                        right: 0;
+                        background: $blue;
+                        padding: 10px;
+                    }
+                    .number {
+                        font-size: 64px;
+                        &::before {
+                            top: 20px;
+                        }
+                    }
+                    .call {
+                        font-size: 22px;
+                        text-align: left;
+                        margin-left: 30px;
+                    }
+                    .whatsapp {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+}

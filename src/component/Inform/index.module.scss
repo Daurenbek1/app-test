@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+
+.inform {
+    background: rgba(255, 138, 1, 0.05);
+    max-width: 360px;
+    margin-top: 40px;
+    padding: 29px 25px;
+
+    .list {
+        display: flex;
+        gap: 10px;
+        border-bottom: 1px solid $yellow;
+        padding: 20px 0;
+        &:first-child {
+            padding-top: 0;
+        }
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        span,
+        p {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 36px;
+        }
+    }
+}
+@media only screen and (max-width: 375px) {
+    .inform {
+        order: -1;
+        margin: 40px auto 0;
+        .list {
+            p {
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+    }
+}
